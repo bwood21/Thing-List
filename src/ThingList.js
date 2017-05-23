@@ -3,7 +3,7 @@ import './ThingList.css'
 
 const ThingList = (props) => {
     return(
-        <ul></ul>
+        <ul className="ThingList"></ul>
     )
 }
 export default ThingList
