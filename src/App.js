@@ -12,6 +12,11 @@ class App extends Component {
       'thing-3': {id: 'thing-3',name:'Bibb lettuce'},
     }
   }
+
+  addThing(){
+    
+  }
+
   render() {
     return (
       <div className="App">
