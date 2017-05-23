@@ -6,3 +6,4 @@ V.1
 #Add the "Add Thing" Button w/CSS
 #Make button work
 #Stop hard-coding _things_. Use only things added via button
+#Make the "remove" button work
