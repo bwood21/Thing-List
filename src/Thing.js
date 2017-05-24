@@ -3,7 +3,7 @@ import ContentEditable from 'react-contenteditable'
 
 import './Thing.css'
 import Actions from './Actions'
-import _completed from './_completed_'
+import _completed_ from './_completed_'
 
 class Thing extends Component {
   componentDidMount() {
@@ -25,13 +25,21 @@ class Thing extends Component {
     }
   }
 
+  // _completedthing_ = (thing) =>{
+  //   const things = {...this.state.things}
+  //   things[thing._completed_] = true;
+  //   this.setState({things})
+  // }
+
   render() {
-    const { thing, removeThing } = this.props
+    const { thing, removeThing, _completedthing_ } = this.props
+    
+   
 
     return (
       <li className="Thing">
         {/*checkbox*/}
-        <_completed/>
+        <_completed_ thing={thing} _completedthing_={_completedthing_}/>
         <div className="details">
           <ContentEditable
             className="name"

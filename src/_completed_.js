@@ -1,8 +1,8 @@
 import React from 'react'
 
-const _completed_ = ({ _completed_ }) => {
-  //return <button className="AddThingButton" onClick={addThing}>Add Thing</button>
-  return <input type="checkbox" value="on" onClick={_completed_}/>
+const _completedthing_ = ({thing, _completedthing_ }) => {
+  
+  return <input type="checkbox" value="on" onClick={_completedthing_(thing)}/>
 }
 
-export default _completed_
+export default _completedthing_
