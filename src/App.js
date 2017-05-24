@@ -5,7 +5,20 @@ import Header from './Header'
 import ThingList from './ThingList'
 import base from './base'
 
+
+
 class App extends Component {
+
+  ComponentWillMount(){  //firebase!backend!
+    base.syncState(
+      'things',
+      {
+        context:this,
+        state:'things'
+      }
+    )
+  }
+
   state = {
     things : {
       'thing-1': {id: 'thing-1',name:'milk'},
