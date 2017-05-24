@@ -4,7 +4,7 @@ import './Thing.css'
 const Thing = ({ thing }) => {
   return (
     <li className="Thing">
-      <button class="add-thing">Add Thing</button>
+      
       <input type="checkbox" value="on" />
       <div className="details">
         <div className="name">

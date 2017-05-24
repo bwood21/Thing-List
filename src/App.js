@@ -13,14 +13,21 @@ class App extends Component {
     }
   }
 
-  addThing(){
-    
+  addThing = () => {
+    const things = this.state.things
+    const thing = {
+      id:`thing-${Date.now()}`,
+      name:'',
+    }
+    things[thing.id] = thing
+    this.setState({things})
   }
 
   render() {
     return (
       <div className="App">
           <Header/>
+          <button className="add-thing">Add Thing</button>
           <ThingList things={this.state.things}/>
       </div>
     );
