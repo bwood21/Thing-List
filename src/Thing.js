@@ -3,6 +3,7 @@ import ContentEditable from 'react-contenteditable'
 
 import './Thing.css'
 import Actions from './Actions'
+import _completed from './_completed_'
 
 class Thing extends Component {
   componentDidMount() {
@@ -29,7 +30,8 @@ class Thing extends Component {
 
     return (
       <li className="Thing">
-        <input type="checkbox" value="on" />
+        {/*checkbox*/}
+        <_completed/>
         <div className="details">
           <ContentEditable
             className="name"

@@ -25,8 +25,10 @@ class App extends Component {
     return {
       id: `thing-${Date.now()}`,
       name: '',
+      _completed_:false
     }
   }
+  
 
   addThing = () => {
     const things = {...this.state.things}
