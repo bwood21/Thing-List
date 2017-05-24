@@ -1,48 +1,66 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import Header from './Header'
 import ThingList from './ThingList'
+import AddThingButton from './AddThingButton'
 import base from './base'
 
-
-
 class App extends Component {
-
-  ComponentWillMount(){  //firebase!backend!
-    base.syncState(
+  componentWillMount() {
+    this.ref = base.syncState(
       'things',
       {
-        context:this,
-        state:'things'
+        context: this,
+        state: 'things'
       }
     )
   }
 
   state = {
-    things : {
-      'thing-1': {id: 'thing-1',name:'milk'},
-      'thing-2': {id: 'thing-2',name:'bread'},
-      'thing-3': {id: 'thing-3',name:'Bibb lettuce'},
+    things: {}
+  }
+
+  thing() {
+    return {
+      id: `thing-${Date.now()}`,
+      name: '',
     }
   }
 
   addThing = () => {
-    const things = this.state.things
-    const thing = {
-      id:`thing-${Date.now()}`,
-      name:'',
-    }
+    const things = {...this.state.things}
+    const thing = this.thing()
     things[thing.id] = thing
-    this.setState({things})
+    this.setState({ things })
+  }
+
+  saveThing = (thing) => {
+    const things = {...this.state.things}
+    things[thing.id] = thing
+    this.setState({ things })
+  }
+
+  removeThing = (thing) => {
+    const things = {...this.state.things}
+    things[thing.id] = null
+    this.setState({ things })
   }
 
   render() {
+    const actions = {
+      saveThing: this.saveThing,
+      removeThing: this.removeThing,
+    }
+
     return (
       <div className="App">
-          <Header/>
-          <button className="add-thing">Add Thing</button>
-          <ThingList things={this.state.things}/>
+        <Header />
+        <AddThingButton addThing={this.addThing} />
+        <ThingList
+          things={this.state.things}
+          {...actions}
+        />
       </div>
     );
   }

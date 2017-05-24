@@ -1,4 +1,5 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css);
+
 .Thing {
   display: -ms-flexbox;
   display: flex;
@@ -6,6 +7,11 @@
       align-items: center;
   border-bottom: 1px solid #F1F1F1;
 }
+
+.Thing:last-child {
+  border-bottom: none;
+}
+
 input:checked + .details {
   background:#F9F9F9;
   text-decoration: line-through;
@@ -36,44 +42,4 @@ input[type="checkbox"] {
 .Thing .name {
   -ms-flex: 1 1 0%;
       flex: 1 1 0%;
-}
-
-.actions {
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-  opacity: 0;
-  margin: -10px 0;
-}
-
-.Thing:hover .actions {
-  opacity: 1;
-}
-
-.actions button {
-  border: 0;
-  background: transparent;
-  color: #999;
-  font-size: 1.5rem;
-}
-
-.actions button:hover {
-  color: black;
-}
-
-.actions button.remove:hover {
-  color: #AD343E;
-}
-
-
-
-button.logout {
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-  display: block;
-  margin: 0 auto 1rem;
-  font-family: 'helvetica neue', sans-serif;
-  font-size: 20px;
-  font-weight: 200;
 }

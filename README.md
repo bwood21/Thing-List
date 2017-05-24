@@ -1,9 +1,29 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)
+## Day 6 Homework
 
-V1.0
-#Add the "Add Thing" Button w/CSS
-#Make button work
-#Stop hard-coding _things_. Use only things added via button
-#Make the "remove" button work
+Add the "Add Thing" button, including the corresponding CSS.
+
+### Bonus Credit
+
+Make that button work!
+
+### Super Mega Bonus Credit
+
+Stop hard-coding _things_ altogether. Use only the things that were added via the "Add Thing" button.
+
+### Super Mega Bonus Credit Hyper Fighting
+
+Make the "remove" button work.
+
+## Day 7 Homework
+
+* When the checkbox is checked, mark the corresponding Thing as _completed_.
+* Be sure this gets synced to Firebase and persists across page refreshes.
+
+### Super Mega Bonus Credit
+
+* Add a due date to each thing.
+* Make sure it persists
+
+**Hint**: HTML 5 includes an input type **date**, _i.e._ `&lt;input type="date" /&gt;`
