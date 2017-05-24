@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './Header'
 import ThingList from './ThingList'
+import base from './base'
 
 class App extends Component {
   state = {
