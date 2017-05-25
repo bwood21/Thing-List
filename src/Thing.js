@@ -18,6 +18,8 @@ class Thing extends Component {
     saveThing(thing)
   }
 
+
+
   blurOnEnter = (ev) => {
     if (ev.key === 'Enter') {
       ev.preventDefault()
@@ -41,7 +43,7 @@ class Thing extends Component {
     return (
       <li className="Thing">
         {/*checkbox*/}
-        <_completed_ thing={thing} _completedthing2_={this._completedthing2_}/>
+        <_completed_ thing={thing} _completedthing2_={this._completedthing2_} />
         <div className="details">
           <ContentEditable
             className="name"
