@@ -25,21 +25,23 @@ class Thing extends Component {
     }
   }
 
-  // _completedthing_ = (thing) =>{
-  //   const things = {...this.state.things}
-  //   things[thing._completed_] = true;
-  //   this.setState({things})
-  // }
+   _completedthing2_ = (ev) =>{
+    const {thing, saveThing} = this.props
+     thing._completed_ = !thing._completed_
+     saveThing(thing)
+     
+  }
+  
 
   render() {
-    const { thing, removeThing, _completedthing_ } = this.props
+    const { thing, removeThing } = this.props
     
    
 
     return (
       <li className="Thing">
         {/*checkbox*/}
-        <_completed_ thing={thing} _completedthing_={_completedthing_}/>
+        <_completed_ thing={thing} _completedthing2_={this._completedthing2_}/>
         <div className="details">
           <ContentEditable
             className="name"

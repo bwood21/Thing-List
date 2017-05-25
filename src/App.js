@@ -29,12 +29,7 @@ class App extends Component {
     }
   }
 
-  _completedthing_ = (thing) =>{
-    const things = {...this.state.things}
-    things[thing._completed_] = true;
-    this.setState({things})
-  }
-  
+ 
 
   addThing = () => {
     const things = {...this.state.things}
@@ -60,9 +55,9 @@ class App extends Component {
       saveThing: this.saveThing,
       removeThing: this.removeThing,
     }
-    const completedAction = {
-      _completedthing_:this._completedthing_
-    }
+    // const completedAction = {
+    //   _completedthing2_:this._completedthing2_
+    // }
 
     return (
       <div className="App">
@@ -71,7 +66,7 @@ class App extends Component {
         <ThingList
           things={this.state.things}
           {...actions}
-          {...completedAction}
+          /*{...completedAction}*/
         />
       </div>
     );

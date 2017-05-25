@@ -1,8 +1,8 @@
 import React from 'react'
 
-const _completedthing_ = ({thing, _completedthing_ }) => {
+const _completedthing_ = ({ _completedthing2_ }) => {
   
-  return <input type="checkbox" value="on" onClick={_completedthing_(thing)}/>
+  return <input type="checkbox" value="on" onChange={_completedthing2_}/>
 }
 
 export default _completedthing_
