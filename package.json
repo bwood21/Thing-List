@@ -1,6 +1,6 @@
 {
   "name": "thing-list",
-  "homepage":"http://bwood21.github.io/Thing-list",
+  "homepage":"http://bwood21.github.io/Thing-List",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
