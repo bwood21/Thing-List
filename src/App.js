@@ -4,28 +4,45 @@ import './App.css';
 import Header from './Header'
 import ThingList from './ThingList'
 import AddThingButton from './AddThingButton'
-import base from './base'
+import Login from './Login'
+import Logout from './Logout'
+import base, {auth} from './base'
 
 class App extends Component {
   componentWillMount() {
+    auth.onAuthStateChanged(
+      (user) =>{
+        if(user){
+         this.authHandler({user})
+        }
+      }
+    )
+  }
+  authHandler = (authData) => {
+    this.setState({uid: authData.user.uid})
+    this.setupThings()
+  }
+
+  setupThings(){
     this.ref = base.syncState(
-      'things',
+      `${this.state.uid}/things`,
       {
         context: this,
         state: 'things'
       }
     )
   }
-
   state = {
-    things: {}
+    things: {},
+    uid: null
   }
 
   thing() {
     return {
       id: `thing-${Date.now()}`,
       name: '',
-      _completed_:false
+      _completed_:false,
+      dueOn:''
     }
   }
 
@@ -50,24 +67,37 @@ class App extends Component {
     this.setState({ things })
   }
 
-  render() {
-    const actions = {
+  signOut = () => {
+    
+    auth.signOut().then(()=>this.setState({uid:null}))
+  }
+
+  renderThings(){
+  const actions = {
       saveThing: this.saveThing,
       removeThing: this.removeThing,
     }
-    // const completedAction = {
-    //   _completedthing2_:this._completedthing2_
-    // }
-
     return (
-      <div className="App">
-        <Header />
+      <div>
         <AddThingButton addThing={this.addThing} />
         <ThingList
           things={this.state.things}
           {...actions}
-          /*{...completedAction}*/
         />
+        <Logout signOut={this.signOut}/>
+        </div>
+    )
+  }
+
+  render() {
+    
+   
+
+    return (
+      <div className="App">
+        <Header />
+        { this.state.uid ? this.renderThings() : <Login authHandler={this.authHandler} /> }
+        
       </div>
     );
   }

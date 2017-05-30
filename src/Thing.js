@@ -52,6 +52,7 @@ class Thing extends Component {
             onKeyPress={this.blurOnEnter}
             ref={input => this.nameInput = input}
           />
+          <input type="date"/>
           <Actions thing={thing} removeThing={removeThing} />
         </div>
       </li>
